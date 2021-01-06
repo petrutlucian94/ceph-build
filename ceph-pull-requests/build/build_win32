@@ -1,0 +1,5 @@
+#!/bin/bash -ex
+export NPROC=$(nproc)
+timeout 3h CMAKE_BUILD_TYPE=Release ./win32_build.sh
+sleep 5
+ps -ef | grep -v jnlp | grep ceph || true
